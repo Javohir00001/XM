@@ -475,7 +475,7 @@ a:hover {
 
 @media (min-width: 320px) and (max-width: 768px) {
     .cryptos__item {
-        width: calc(236px + (400 - 236) * ((100vw - 320px) / (768 - 320)));
+        width: calc(236px + (500 - 236) * ((100vw - 320px) / (768 - 320)));
     }
 }
 
