@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'Bebas Neue';
+    src: local('Bebas Neue Pro Bold'), local('BebasNeuePro-Bold'),
+        url('BebasNeuePro-Bold.woff2') format('woff2'),
+        url('BebasNeuePro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
