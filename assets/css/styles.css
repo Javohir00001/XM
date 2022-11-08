@@ -251,7 +251,7 @@ a:hover {
         url("../images/figma/general-0-swaps-mobile.png");
     background-size: contain;
     background-repeat: no-repeat;
-    height: 85vh;
+    min-height: 90vh;
 }
 
 .header__content {
