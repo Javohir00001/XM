@@ -3,7 +3,7 @@ $(document).ready(function () {
     setTimeout(function () {
         $('.preloader').addClass('end');
         $('.wrapper').css('display', 'block');
-    }, 3000);
+    }, 3000)
     setTimeout(function () {
         $('.preloader').css('display', 'none');
     }, 4000);
@@ -15,22 +15,22 @@ $(document).ready(function () {
             for (i in datas.data) {
                 for (let j = 0; j < symbols.length; j++) {
                     if (datas.data[i].symbol == symbols[j]) {
-                        $('.crypto__price').eq(j).html(`
-                            $${datas.data[i].price_usd}
+                        $('.cryptos').append(`
+                        <li class="cryptos__item p-3 mb-4">
+                            <div class="crypto d-flex align-items-center">
+                                <img src="assets/images/figma/cryptos/${symbols[j]}.svg" alt="bitcoin ison">
+                                <h5 class="m-2">${datas.data[i].symbol}</h5>
+                                <span class="d-flex justify-content-center align-items-center px-2">${datas.data[i].name}</span>
+                            </div>
+                            <hr class="my-3">
+                            <h3 class="crypto__price font-weight-bold">$${datas.data[i].price_usd}</h3>
+                            ${datas.data[i].percent_change_24h > 0 ? 
+                                `<h4 class="crypto__condition font-weight-normal crypto__condition--up mt-3"><i class="fa-solid fa-circle-chevron-up"></i> ${datas.data[i].percent_change_24h.replace(/-/g, '')}%</h4>    `
+                                : 
+                                `<h4 class="crypto__condition font-weight-normal crypto__condition--down mt-3"><i class="fa-solid fa-circle-chevron-down"></i> ${datas.data[i].percent_change_24h.replace(/-/g, '')}%</h4>    `
+                            }
+                        </li>                   
                         `)
-                        if (+datas.data[i].percent_change_24h > 0) {
-                            $('.crypto__condition').eq(j).html(`
-                            <i class="fa-solid fa-circle-chevron-up"></i> ${datas.data[i].percent_change_24h}%`)
-                            $('.crypto__condition').eq(j).removeClass('crypto__condition--down')
-                            $('.crypto__condition').eq(j).addClass('crypto__condition--up')
-                            // <i class="fa-solid fa-circle-chevron-down"></i>
-                        } else if (+datas.data[i].percent_change_24h < 0) {
-                            $('.crypto__condition').eq(j).html(`
-                            <i class="fa-solid fa-circle-chevron-down"></i> ${datas.data[i].percent_change_24h.replace(/-/g, '')}%`)
-                            $('.crypto__condition').eq(j).addClass('crypto__condition--down')
-                            $('.crypto__condition').eq(j).removeClass('crypto__condition--up')
-                            // <i class="fa-solid fa-circle-chevron-down"></i>
-                        }
                     } else {
                         continue
                     }
@@ -141,7 +141,7 @@ $(document).ready(function () {
             $("#registration__form :input").serializeArray(),
             function (data) {
                 var response = JSON.parse(data)
-                if (response.message == "success") {
+                if (response.message == "success") {``
                     $('.registration__alert--valid').addClass('active')
                     $('.registration__alert--invalid').removeClass('active')
                 } else {

@@ -251,7 +251,8 @@ a:hover {
         url("../images/figma/general-0-swaps-mobile.png");
     background-size: contain;
     background-repeat: no-repeat;
-    min-height: 90vh;
+    background-position: top center !important;
+    padding: 60px 21px;
 }
 
 .header__content {
@@ -301,6 +302,7 @@ a:hover {
         background-position: center center;
         background-size: contain;
         background-repeat: no-repeat;
+        padding: 120px 0px;
     }
 
     .header__content {
@@ -487,6 +489,13 @@ a:hover {
     .cryptos__item {
         width: 206px;
     }
+    .cryptos__item:nth-child(2) {
+        margin: 0 16px;
+    }
+    .cryptos__item:nth-child(4) {
+        margin-right: 16px;
+    }
+
 }
 
 @media (min-width: 1200px) {
@@ -496,6 +505,7 @@ a:hover {
 
     .cryptos__item {
         width: 204px;
+        margin: 0 !important;
     }
 
     .crypto img {
